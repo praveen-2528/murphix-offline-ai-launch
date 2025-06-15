@@ -1,10 +1,11 @@
-
 import { useState } from "react";
 import { Mail, Check, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface FormData {
   email: string;
@@ -27,6 +28,7 @@ export const EmailSignup = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,13 +77,41 @@ export const EmailSignup = () => {
     setIsSubmitting(true);
     
     try {
-      // Here you would typically send to your backend/Supabase
-      console.log("Form submitted:", formData);
+      console.log("Submitting to Supabase:", formData);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase
+        .from('early_access_signups')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || null
+          }
+        ]);
+
+      if (error) {
+        console.error("Supabase error:", error);
+        
+        // Handle duplicate email error specifically
+        if (error.code === '23505') {
+          toast({
+            title: "Already signed up",
+            description: "This email is already on our early access list!",
+            variant: "destructive",
+          });
+          return;
+        }
+        
+        throw error;
+      }
       
+      console.log("Successfully saved to database");
       setIsSubmitted(true);
+      
+      toast({
+        title: "Success!",
+        description: "You've been added to our early access list.",
+      });
       
       // Redirect to download page after 2 seconds
       setTimeout(() => {
@@ -89,7 +119,11 @@ export const EmailSignup = () => {
       }, 2000);
     } catch (error) {
       console.error("Submission error:", error);
-      // Handle error (you could show a toast notification here)
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
