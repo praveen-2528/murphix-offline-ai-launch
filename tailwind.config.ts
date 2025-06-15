@@ -138,14 +138,6 @@ export default {
 						opacity: '1'
 					}
 				},
-				'shimmer': {
-					'0%': {
-						backgroundPosition: '-200% 0'
-					},
-					'100%': {
-						backgroundPosition: '200% 0'
-					}
-				},
 				'holographic-scan': {
 					'0%': {
 						transform: 'translateX(-100%)',
@@ -157,6 +149,156 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)',
 						opacity: '0'
+					}
+				},
+				'cosmic-drift-1': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.7'
+					},
+					'33%': {
+						transform: 'translate(25px, -20px) scale(1.1)',
+						opacity: '0.9'
+					},
+					'66%': {
+						transform: 'translate(-20px, 30px) scale(0.9)',
+						opacity: '0.8'
+					}
+				},
+				'cosmic-drift-2': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.6'
+					},
+					'50%': {
+						transform: 'translate(-30px, 25px) scale(1.2)',
+						opacity: '1'
+					}
+				},
+				'cosmic-drift-3': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.8'
+					},
+					'25%': {
+						transform: 'translate(35px, 15px) scale(0.8)',
+						opacity: '0.6'
+					},
+					'75%': {
+						transform: 'translate(-25px, -20px) scale(1.1)',
+						opacity: '0.9'
+					}
+				},
+				'cosmic-drift-4': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.5'
+					},
+					'40%': {
+						transform: 'translate(-40px, 35px) scale(1.3)',
+						opacity: '0.8'
+					},
+					'80%': {
+						transform: 'translate(30px, -25px) scale(0.9)',
+						opacity: '0.7'
+					}
+				},
+				'cosmic-drift-5': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.4'
+					},
+					'60%': {
+						transform: 'translate(20px, -40px) scale(1.15)',
+						opacity: '0.75'
+					}
+				},
+				'stellar-pulse': {
+					'0%, 100%': {
+						opacity: '0.4',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.3)'
+					}
+				},
+				'stellar-shimmer': {
+					'0%, 100%': {
+						opacity: '0.2'
+					},
+					'50%': {
+						opacity: '0.9'
+					}
+				},
+				'meteor-shower': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-120px) translateY(120px)'
+					},
+					'10%': {
+						opacity: '1'
+					},
+					'90%': {
+						opacity: '1'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateX(120px) translateY(-120px)'
+					}
+				},
+				'galactic-rotation': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'cosmic-dust': {
+					'0%, 100%': {
+						transform: 'translateY(0) translateX(0)',
+						opacity: '0.1'
+					},
+					'25%': {
+						transform: 'translateY(-25px) translateX(15px)',
+						opacity: '0.4'
+					},
+					'50%': {
+						transform: 'translateY(-15px) translateX(-20px)',
+						opacity: '0.6'
+					},
+					'75%': {
+						transform: 'translateY(-35px) translateX(25px)',
+						opacity: '0.3'
+					}
+				},
+				'quantum-field': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '0.1'
+					},
+					'50%': {
+						transform: 'scale(1.2)',
+						opacity: '0.4'
+					}
+				},
+				'cosmic-aurora': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'translateX(0)'
+					},
+					'50%': {
+						opacity: '0.7',
+						transform: 'translateX(20px)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
 					}
 				},
 				'nebula-drift-1': {
@@ -245,32 +387,6 @@ export default {
 						transform: 'translateX(100px) translateY(-100px)'
 					}
 				},
-				'galaxy-rotation': {
-					'0%': {
-						transform: 'rotate(0deg)'
-					},
-					'100%': {
-						transform: 'rotate(360deg)'
-					}
-				},
-				'cosmic-float': {
-					'0%, 100%': {
-						transform: 'translateY(0) translateX(0)',
-						opacity: '0.1'
-					},
-					'25%': {
-						transform: 'translateY(-20px) translateX(10px)',
-						opacity: '0.3'
-					},
-					'50%': {
-						transform: 'translateY(-10px) translateX(-15px)',
-						opacity: '0.5'
-					},
-					'75%': {
-						transform: 'translateY(-30px) translateX(20px)',
-						opacity: '0.2'
-					}
-				},
 				'energy-pulse': {
 					'0%, 100%': {
 						transform: 'scale(1)',
@@ -290,8 +406,20 @@ export default {
 				'slide-up': 'slide-up 0.7s ease-out',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'shimmer': 'shimmer 3s linear infinite',
 				'holographic-scan': 'holographic-scan 4s ease-in-out infinite',
+				'cosmic-drift-1': 'cosmic-drift-1 30s ease-in-out infinite',
+				'cosmic-drift-2': 'cosmic-drift-2 35s ease-in-out infinite',
+				'cosmic-drift-3': 'cosmic-drift-3 40s ease-in-out infinite',
+				'cosmic-drift-4': 'cosmic-drift-4 32s ease-in-out infinite',
+				'cosmic-drift-5': 'cosmic-drift-5 38s ease-in-out infinite',
+				'stellar-pulse': 'stellar-pulse 4s ease-in-out infinite',
+				'stellar-shimmer': 'stellar-shimmer 5s ease-in-out infinite',
+				'meteor-shower': 'meteor-shower 2.5s ease-out infinite',
+				'galactic-rotation': 'galactic-rotation 60s linear infinite',
+				'cosmic-dust': 'cosmic-dust 45s ease-in-out infinite',
+				'quantum-field': 'quantum-field 8s ease-in-out infinite',
+				'cosmic-aurora': 'cosmic-aurora 12s ease-in-out infinite',
+				'shimmer': 'shimmer 3s linear infinite',
 				'nebula-drift-1': 'nebula-drift-1 25s ease-in-out infinite',
 				'nebula-drift-2': 'nebula-drift-2 30s ease-in-out infinite',
 				'nebula-drift-3': 'nebula-drift-3 35s ease-in-out infinite',
@@ -299,8 +427,6 @@ export default {
 				'star-twinkle': 'star-twinkle 3s ease-in-out infinite',
 				'star-pulse': 'star-pulse 4s ease-in-out infinite',
 				'shooting-star': 'shooting-star 2s ease-out infinite',
-				'galaxy-rotation': 'galaxy-rotation 50s linear infinite',
-				'cosmic-float': 'cosmic-float 40s ease-in-out infinite',
 				'energy-pulse': 'energy-pulse 6s ease-in-out infinite'
 			},
 			backgroundSize: {

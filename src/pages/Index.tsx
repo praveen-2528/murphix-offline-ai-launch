@@ -40,128 +40,136 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen bg-slate-900 transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'} relative overflow-hidden`}>
-      {/* Deep Space Background with Nebula and Stars */}
+      {/* Cosmic Deep Space Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-purple-900/30"></div>
+        {/* Base cosmic gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-black"></div>
         
-        {/* Nebula clouds */}
+        {/* Cosmic nebulae layers */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-radial from-blue-500/10 via-blue-600/5 to-transparent rounded-full blur-3xl animate-nebula-drift-1"></div>
-          <div className="absolute top-1/4 right-0 w-80 h-80 bg-gradient-radial from-purple-500/15 via-purple-600/8 to-transparent rounded-full blur-3xl animate-nebula-drift-2"></div>
-          <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-radial from-teal-500/12 via-cyan-600/6 to-transparent rounded-full blur-3xl animate-nebula-drift-3"></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-radial from-orange-500/8 via-amber-600/4 to-transparent rounded-full blur-3xl animate-nebula-drift-4"></div>
+          <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-radial from-purple-500/20 via-purple-600/10 to-transparent rounded-full blur-3xl animate-cosmic-drift-1"></div>
+          <div className="absolute top-1/3 right-10 w-80 h-80 bg-gradient-radial from-cyan-500/25 via-blue-600/12 to-transparent rounded-full blur-3xl animate-cosmic-drift-2"></div>
+          <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-radial from-emerald-500/18 via-teal-600/8 to-transparent rounded-full blur-3xl animate-cosmic-drift-3"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-radial from-rose-500/15 via-pink-600/7 to-transparent rounded-full blur-3xl animate-cosmic-drift-4"></div>
+          <div className="absolute bottom-1/4 right-20 w-56 h-56 bg-gradient-radial from-amber-500/12 via-orange-600/6 to-transparent rounded-full blur-3xl animate-cosmic-drift-5"></div>
         </div>
         
-        {/* Star field layers */}
+        {/* Stellar field with multiple layers */}
         <div className="absolute inset-0">
-          {/* Large bright stars */}
-          {[...Array(50)].map((_, i) => (
+          {/* Bright foreground stars */}
+          {[...Array(40)].map((_, i) => (
             <div
               key={`bright-${i}`}
-              className="absolute w-1 h-1 bg-white rounded-full shadow-white shadow-sm animate-star-twinkle"
+              className="absolute w-1 h-1 bg-white rounded-full shadow-white shadow-lg animate-stellar-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                opacity: 0.7 + Math.random() * 0.3
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${3 + Math.random() * 2}s`,
+                opacity: 0.8 + Math.random() * 0.2
               }}
             />
           ))}
           
-          {/* Medium stars */}
-          {[...Array(150)].map((_, i) => (
+          {/* Medium distance stars */}
+          {[...Array(120)].map((_, i) => (
             <div
               key={`medium-${i}`}
-              className="absolute w-0.5 h-0.5 bg-blue-100 rounded-full animate-star-pulse"
+              className="absolute w-0.5 h-0.5 bg-blue-100 rounded-full animate-stellar-shimmer"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                opacity: 0.4 + Math.random() * 0.4
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${4 + Math.random() * 3}s`,
+                opacity: 0.5 + Math.random() * 0.3
               }}
             />
           ))}
           
-          {/* Small distant stars */}
-          {[...Array(300)].map((_, i) => (
+          {/* Distant star field */}
+          {[...Array(400)].map((_, i) => (
             <div
-              key={`small-${i}`}
+              key={`distant-${i}`}
               className="absolute w-px h-px bg-slate-300 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                opacity: 0.2 + Math.random() * 0.3
+                opacity: 0.15 + Math.random() * 0.25
               }}
             />
           ))}
         </div>
         
-        {/* Shooting stars */}
-        <div className="absolute inset-0">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={`shooting-${i}`}
-              className="absolute w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent animate-shooting-star opacity-0"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${1 + Math.random()}s`,
-                transform: `rotate(${Math.random() * 60 - 30}deg)`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Distant galaxies */}
+        {/* Meteor shower */}
         <div className="absolute inset-0">
           {[...Array(8)].map((_, i) => (
             <div
-              key={`galaxy-${i}`}
-              className="absolute rounded-full bg-gradient-radial from-white/5 via-blue-300/3 to-transparent animate-galaxy-rotation opacity-20"
-              style={{
-                left: `${Math.random() * 80 + 10}%`,
-                top: `${Math.random() * 80 + 10}%`,
-                width: `${30 + Math.random() * 40}px`,
-                height: `${30 + Math.random() * 40}px`,
-                animationDuration: `${20 + Math.random() * 30}s`,
-                animationDelay: `${Math.random() * 10}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Cosmic dust particles */}
-        <div className="absolute inset-0">
-          {[...Array(100)].map((_, i) => (
-            <div
-              key={`dust-${i}`}
-              className="absolute w-px h-px bg-blue-200/30 rounded-full animate-cosmic-float"
+              key={`meteor-${i}`}
+              className="absolute w-32 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent animate-meteor-shower opacity-0"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 20}s`,
-                animationDuration: `${15 + Math.random() * 25}s`
+                animationDelay: `${Math.random() * 15}s`,
+                animationDuration: `${1.5 + Math.random() * 0.8}s`,
+                transform: `rotate(${Math.random() * 45 - 22.5}deg)`
               }}
             />
           ))}
         </div>
         
-        {/* Energy fields */}
+        {/* Spiral galaxies */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-blue-400/10 rounded-full animate-energy-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-24 h-24 border border-purple-400/10 rounded-full animate-energy-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-3/4 w-20 h-20 border border-teal-400/10 rounded-full animate-energy-pulse" style={{ animationDelay: '4s' }}></div>
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={`galaxy-${i}`}
+              className="absolute rounded-full bg-gradient-radial from-indigo-400/8 via-purple-300/4 to-transparent animate-galactic-rotation opacity-30"
+              style={{
+                left: `${Math.random() * 70 + 15}%`,
+                top: `${Math.random() * 70 + 15}%`,
+                width: `${40 + Math.random() * 60}px`,
+                height: `${40 + Math.random() * 60}px`,
+                animationDuration: `${25 + Math.random() * 35}s`,
+                animationDelay: `${Math.random() * 15}s`
+              }}
+            />
+          ))}
         </div>
         
-        {/* Atmospheric glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-blue-900/5"></div>
+        {/* Cosmic dust clouds */}
+        <div className="absolute inset-0">
+          {[...Array(150)].map((_, i) => (
+            <div
+              key={`dust-${i}`}
+              className="absolute w-px h-px bg-violet-200/20 rounded-full animate-cosmic-dust"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 25}s`,
+                animationDuration: `${20 + Math.random() * 30}s`
+              }}
+            />
+          ))}
+        </div>
         
-        {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-900/40"></div>
+        {/* Quantum energy fields */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/5 left-1/5 w-40 h-40 border border-cyan-400/8 rounded-full animate-quantum-field"></div>
+          <div className="absolute top-2/3 right-1/5 w-32 h-32 border border-purple-400/8 rounded-full animate-quantum-field" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/2 left-2/3 w-24 h-24 border border-emerald-400/8 rounded-full animate-quantum-field" style={{ animationDelay: '6s' }}></div>
+          <div className="absolute top-1/6 right-1/3 w-28 h-28 border border-rose-400/8 rounded-full animate-quantum-field" style={{ animationDelay: '9s' }}></div>
+        </div>
+        
+        {/* Cosmic aurora effect */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-cyan-500/5 via-purple-500/3 to-transparent animate-cosmic-aurora"></div>
+          <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-t from-emerald-500/5 via-teal-500/3 to-transparent animate-cosmic-aurora" style={{ animationDelay: '8s' }}></div>
+        </div>
+        
+        {/* Interstellar medium */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10"></div>
+        
+        {/* Deep space vignette */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-900/60"></div>
       </div>
       
       <Navigation />

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
@@ -15,10 +15,6 @@ export const Navigation = () => {
               <span className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:via-purple-300 hover:to-teal-300 transition-all duration-300 cursor-pointer">
                 Murphix
               </span>
-              <div className="hidden md:flex items-center space-x-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-400/30">
-                <Sparkles className="w-3 h-3 text-blue-400" />
-                <span className="text-xs text-blue-300 font-medium">by Allynt</span>
-              </div>
             </div>
           </div>
           

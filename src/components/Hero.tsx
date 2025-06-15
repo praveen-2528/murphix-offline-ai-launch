@@ -1,5 +1,5 @@
 
-import { ArrowRight, Play, Mic, MousePointer, FileText, Calendar, Mail, Folder } from "lucide-react";
+import { Play, Mic, MousePointer, FileText, Calendar, Mail, Folder } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingAnimation } from "./TypingAnimation";
 import { useState, useEffect } from "react";
@@ -102,7 +102,7 @@ export const Hero = () => {
               <TypingAnimation 
                 text="Murphix"
                 speed={150}
-                className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text animate-shimmer bg-400%"
+                className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text"
                 onComplete={handleTypingComplete}
               />
               <br />
@@ -137,10 +137,6 @@ export const Hero = () => {
           </div>
           
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 transition-all duration-700 ${typingComplete ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 hover:from-blue-700 hover:via-purple-700 hover:to-teal-700 text-white px-8 py-4 text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
-              Get Early Access
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
             <Button 
               variant="outline" 
               size="lg" 
