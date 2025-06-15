@@ -1,17 +1,44 @@
-
 import { ArrowRight, Play, Mic, MousePointer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingAnimation } from "./TypingAnimation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Hero = () => {
   const [typingComplete, setTypingComplete] = useState(false);
   const [showDemoAnimation, setShowDemoAnimation] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const demoSteps = [
+    { icon: Mic, text: '"Open my files"', color: "text-green-400", bgColor: "bg-green-500/20", borderColor: "border-green-400/50" },
+    { icon: null, text: "Processing voice...", color: "text-blue-400", bgColor: "bg-blue-500/20", borderColor: "border-blue-400/50" },
+    { icon: null, text: "Understanding command", color: "text-purple-400", bgColor: "bg-purple-500/20", borderColor: "border-purple-400/50" },
+    { icon: MousePointer, text: "Moving cursor to Files", color: "text-cyan-400", bgColor: "bg-cyan-500/20", borderColor: "border-cyan-400/50" },
+    { icon: null, text: "Double-clicking Files folder", color: "text-yellow-400", bgColor: "bg-yellow-500/20", borderColor: "border-yellow-400/50" },
+    { icon: null, text: "✓ Files opened successfully", color: "text-green-400", bgColor: "bg-green-500/20", borderColor: "border-green-400/50" }
+  ];
 
   const handleTypingComplete = () => {
     setTypingComplete(true);
     setTimeout(() => setShowDemoAnimation(true), 1000);
   };
+
+  useEffect(() => {
+    if (showDemoAnimation) {
+      const interval = setInterval(() => {
+        setCurrentStep(prev => {
+          if (prev >= demoSteps.length - 1) {
+            clearInterval(interval);
+            // Reset after a pause
+            setTimeout(() => setCurrentStep(0), 2000);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 1500);
+
+      return () => clearInterval(interval);
+    }
+  }, [showDemoAnimation, demoSteps.length]);
 
   return (
     <section className="relative pt-20 pb-16 overflow-hidden">
@@ -106,32 +133,51 @@ export const Hero = () => {
                   </p>
                 </div>
                 
-                {/* Enhanced Animated Demo Elements */}
-                <div className={`flex items-center gap-6 mt-6 transition-all duration-1000 ${showDemoAnimation ? 'opacity-100' : 'opacity-0'}`}>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 animate-pulse hover:bg-white/20 transition-all duration-300">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-white">"Open my files"</span>
-                    {/* Voice visualization */}
-                    <div className="flex gap-1 ml-2">
-                      <div className="w-0.5 h-2 bg-green-400 rounded-full animate-pulse [animation-delay:0ms]"></div>
-                      <div className="w-0.5 h-3 bg-green-400 rounded-full animate-pulse [animation-delay:100ms]"></div>
-                      <div className="w-0.5 h-1 bg-green-400 rounded-full animate-pulse [animation-delay:200ms]"></div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-slate-400 animate-bounce">
-                    <div className="flex gap-1">
-                      <div className="w-1 h-1 bg-slate-400 rounded-full animate-bounce [animation-delay:0ms]"></div>
-                      <div className="w-1 h-1 bg-slate-400 rounded-full animate-bounce [animation-delay:150ms]"></div>
-                      <div className="w-1 h-1 bg-slate-400 rounded-full animate-bounce [animation-delay:300ms]"></div>
-                    </div>
-                  </div>
-                  
-                  <div className={`flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 transition-all duration-500 hover:bg-white/20 ${showDemoAnimation ? 'animate-fade-in [animation-delay:1s]' : ''}`}>
-                    <MousePointer className="text-cyan-400 animate-bounce" size={14} />
-                    <span className="text-sm text-white">Files opened</span>
-                    {/* Success indicator */}
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-ping ml-1"></div>
+                {/* Enhanced Step-by-Step Demo Animation */}
+                <div className={`transition-all duration-1000 ${showDemoAnimation ? 'opacity-100' : 'opacity-0'}`}>
+                  <div className="flex flex-col gap-3 mt-6 max-w-md mx-auto">
+                    {demoSteps.map((step, index) => {
+                      const isActive = index === currentStep;
+                      const isCompleted = index < currentStep;
+                      const IconComponent = step.icon;
+                      
+                      return (
+                        <div
+                          key={index}
+                          className={`flex items-center gap-3 px-4 py-2 rounded-full border transition-all duration-500 ${
+                            isActive 
+                              ? `${step.bgColor} ${step.borderColor} scale-105 shadow-lg` 
+                              : isCompleted
+                              ? 'bg-green-500/10 border-green-400/30 opacity-75'
+                              : 'bg-white/5 border-white/10 opacity-40'
+                          }`}
+                        >
+                          {IconComponent ? (
+                            <IconComponent 
+                              className={`${isActive ? step.color : isCompleted ? 'text-green-400' : 'text-slate-500'} ${isActive ? 'animate-pulse' : ''}`} 
+                              size={14} 
+                            />
+                          ) : (
+                            <div className={`w-2 h-2 rounded-full ${isActive ? step.color.replace('text-', 'bg-') : isCompleted ? 'bg-green-400' : 'bg-slate-500'} ${isActive ? 'animate-pulse' : ''}`}></div>
+                          )}
+                          <span className={`text-sm font-medium ${isActive ? step.color : isCompleted ? 'text-green-400' : 'text-slate-500'}`}>
+                            {step.text}
+                          </span>
+                          {isActive && (
+                            <div className="flex gap-1 ml-auto">
+                              <div className="w-1 h-1 bg-current rounded-full animate-bounce [animation-delay:0ms]"></div>
+                              <div className="w-1 h-1 bg-current rounded-full animate-bounce [animation-delay:150ms]"></div>
+                              <div className="w-1 h-1 bg-current rounded-full animate-bounce [animation-delay:300ms]"></div>
+                            </div>
+                          )}
+                          {isCompleted && (
+                            <div className="w-4 h-4 bg-green-500/20 rounded-full flex items-center justify-center ml-auto">
+                              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
