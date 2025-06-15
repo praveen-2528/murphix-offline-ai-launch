@@ -1,12 +1,13 @@
-
 import { useState } from "react";
 import { Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 
 export const EmailSignup = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,10 +15,11 @@ export const EmailSignup = () => {
       // Here you would typically send to your backend
       console.log("Email submitted:", email);
       setIsSubmitted(true);
+      
+      // Redirect to download page after 2 seconds
       setTimeout(() => {
-        setIsSubmitted(false);
-        setEmail("");
-      }, 3000);
+        navigate('/download');
+      }, 2000);
     }
   };
 
@@ -48,7 +50,7 @@ export const EmailSignup = () => {
         <div className="text-center py-4">
           <Check className="mx-auto mb-2 text-green-400" size={32} />
           <h3 className="text-lg font-semibold text-white mb-1">Thanks!</h3>
-          <p className="text-slate-300 text-sm">We'll notify you when Murphix is ready</p>
+          <p className="text-slate-300 text-sm">Redirecting to download...</p>
         </div>
       )}
     </div>
