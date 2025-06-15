@@ -12,11 +12,11 @@ export const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-4 animate-slide-in-left">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:via-purple-300 hover:to-teal-300 transition-all duration-300 cursor-pointer animate-float">
+              <span className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:via-purple-300 hover:to-teal-300 transition-all duration-300 cursor-pointer">
                 Murphix
               </span>
-              <div className="hidden md:flex items-center space-x-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-400/30 animate-energy-wave">
-                <Sparkles className="w-3 h-3 text-blue-400 animate-gentle-pulse" />
+              <div className="hidden md:flex items-center space-x-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-400/30">
+                <Sparkles className="w-3 h-3 text-blue-400" />
                 <span className="text-xs text-blue-300 font-medium">by Allynt</span>
               </div>
             </div>
@@ -32,7 +32,7 @@ export const Navigation = () => {
               Benefits
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <Button className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 hover:from-blue-700 hover:via-purple-700 hover:to-teal-700 text-white hover:scale-105 transition-all duration-300 shadow-lg animate-energy-wave">
+            <Button className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 hover:from-blue-700 hover:via-purple-700 hover:to-teal-700 text-white hover:scale-105 transition-all duration-300 shadow-lg">
               Get Early Access
             </Button>
           </div>
@@ -41,7 +41,7 @@ export const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-blue-300 transition-all duration-300 hover:scale-110 animate-quantum-flicker"
+              className="text-slate-300 hover:text-blue-300 transition-all duration-300 hover:scale-110"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

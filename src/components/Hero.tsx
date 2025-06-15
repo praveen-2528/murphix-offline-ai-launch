@@ -93,8 +93,8 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 mb-6 animate-slide-up hover:bg-white/15 transition-all duration-300 hover:scale-105 animate-gentle-pulse">
-              <span className="text-blue-300 text-sm animate-quantum-flicker">Your data stays private</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 mb-6 animate-slide-up hover:bg-white/15 transition-all duration-300 hover:scale-105">
+              <span className="text-blue-300 text-sm">Your data stays private</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
@@ -106,7 +106,7 @@ export const Hero = () => {
                 onComplete={handleTypingComplete}
               />
               <br />
-              <span className={`transition-all duration-700 ${typingComplete ? 'opacity-100 animate-float' : 'opacity-0'}`}>
+              <span className={`transition-all duration-700 ${typingComplete ? 'opacity-100' : 'opacity-0'}`}>
                 Your Voice-Powered AI
               </span>
             </h1>
@@ -116,44 +116,44 @@ export const Hero = () => {
             </p>
             
             <div className={`flex items-center justify-center gap-4 mb-8 transition-all duration-700 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-400/30 rounded-full px-4 py-2 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-105 animate-energy-wave">
-                <Mic className="text-blue-400 animate-gentle-pulse" size={16} />
+              <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-400/30 rounded-full px-4 py-2 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-105">
+                <Mic className="text-blue-400" size={16} />
                 <span className="text-sm text-white">Voice Commands</span>
                 <div className="flex gap-1 ml-2">
-                  <div className="w-1 h-3 bg-blue-400 rounded-full animate-gentle-pulse [animation-delay:0ms]"></div>
-                  <div className="w-1 h-4 bg-purple-400 rounded-full animate-gentle-pulse [animation-delay:300ms]"></div>
-                  <div className="w-1 h-2 bg-teal-400 rounded-full animate-gentle-pulse [animation-delay:600ms]"></div>
+                  <div className="w-1 h-3 bg-blue-400 rounded-full"></div>
+                  <div className="w-1 h-4 bg-purple-400 rounded-full"></div>
+                  <div className="w-1 h-2 bg-teal-400 rounded-full"></div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-teal-500/10 backdrop-blur-md border border-purple-400/30 rounded-full px-4 py-2 hover:from-purple-500/20 hover:to-teal-500/20 transition-all duration-300 hover:scale-105 animate-energy-wave [animation-delay:1s]">
-                <MousePointer className="text-purple-400 animate-float" size={16} />
+              <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-teal-500/10 backdrop-blur-md border border-purple-400/30 rounded-full px-4 py-2 hover:from-purple-500/20 hover:to-teal-500/20 transition-all duration-300 hover:scale-105">
+                <MousePointer className="text-purple-400" size={16} />
                 <span className="text-sm text-white">Virtual Mouse</span>
                 <div className="relative ml-2">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-gentle-pulse"></div>
-                  <div className="absolute top-0 left-0 w-2 h-2 bg-teal-400 rounded-full animate-gentle-pulse [animation-delay:500ms]"></div>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <div className="absolute top-0 left-0 w-2 h-2 bg-teal-400 rounded-full"></div>
                 </div>
               </div>
             </div>
           </div>
           
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 transition-all duration-700 ${typingComplete ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 hover:from-blue-700 hover:via-purple-700 hover:to-teal-700 text-white px-8 py-4 text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300 animate-energy-wave shadow-lg">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 hover:from-blue-700 hover:via-purple-700 hover:to-teal-700 text-white px-8 py-4 text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
               Get Early Access
-              <ArrowRight className="ml-2 animate-float" size={20} />
+              <ArrowRight className="ml-2" size={20} />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="border-blue-400/30 bg-gradient-to-r from-white/10 to-blue-500/10 backdrop-blur-md text-white hover:from-white/20 hover:to-blue-500/20 px-8 py-4 text-lg hover:scale-105 transition-all duration-300 hover:border-blue-400/50"
             >
-              <Play className="mr-2 animate-gentle-pulse" size={20} />
+              <Play className="mr-2" size={20} />
               Watch Demo
             </Button>
           </div>
 
           {/* Interactive Demo Video with Holographic Effect */}
           <div className={`relative mx-auto max-w-4xl transition-all duration-1000 ${typingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="relative bg-gradient-to-br from-white/5 via-blue-500/5 to-purple-500/5 backdrop-blur-md rounded-3xl p-8 border border-gradient-to-r border-blue-400/20 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:border-blue-400/40 group animate-float">
+            <div className="relative bg-gradient-to-br from-white/5 via-blue-500/5 to-purple-500/5 backdrop-blur-md rounded-3xl p-8 border border-gradient-to-r border-blue-400/20 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:border-blue-400/40 group">
               {/* Holographic scan line */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent animate-holographic-scan"></div>
@@ -166,7 +166,7 @@ export const Hero = () => {
                   {[...Array(20)].map((_, i) => (
                     <div
                       key={i}
-                      className={`absolute w-1 h-1 rounded-full animate-float ${
+                      className={`absolute w-1 h-1 rounded-full ${
                         i % 4 === 0 ? 'bg-blue-400/40' :
                         i % 4 === 1 ? 'bg-purple-400/40' :
                         i % 4 === 2 ? 'bg-white/60' : 'bg-teal-400/40'
@@ -182,11 +182,11 @@ export const Hero = () => {
                 </div>
 
                 <div className="text-center mb-6 relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-float hover:scale-110 transition-transform duration-300 cursor-pointer group-hover:shadow-blue-500/30 animate-energy-wave">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer group-hover:shadow-blue-500/30">
                     <Play className="text-white group-hover:scale-110 transition-transform duration-300" size={32} />
-                    <div className="absolute inset-0 rounded-full border-2 border-blue-400/50 animate-energy-wave"></div>
+                    <div className="absolute inset-0 rounded-full border-2 border-blue-400/50"></div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300 animate-quantum-flicker">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                     See Murphix in Action
                   </h3>
                   <p className="text-slate-300 group-hover:text-slate-200 transition-colors duration-300">
@@ -194,8 +194,8 @@ export const Hero = () => {
                   </p>
                   
                   {/* Dynamic Task Display */}
-                  <div className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full px-4 py-2 border border-blue-400/30 animate-gentle-pulse">
-                    <currentTask.icon className="text-blue-400 animate-float" size={16} />
+                  <div className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full px-4 py-2 border border-blue-400/30">
+                    <currentTask.icon className="text-blue-400" size={16} />
                     <span className="text-sm text-blue-300 font-medium">
                       Current Task: {currentTask.command}
                     </span>
@@ -215,7 +215,7 @@ export const Hero = () => {
                           key={`${currentTaskIndex}-${index}`}
                           className={`flex items-center gap-3 px-4 py-3 rounded-full border transition-all duration-500 ${
                             isActive 
-                              ? `${step.bgColor} ${step.borderColor} scale-105 shadow-lg animate-gentle-pulse` 
+                              ? `${step.bgColor} ${step.borderColor} scale-105 shadow-lg` 
                               : isCompleted
                               ? 'bg-emerald-500/10 border-emerald-400/30 opacity-75'
                               : 'bg-white/5 border-white/10 opacity-40'
@@ -223,24 +223,24 @@ export const Hero = () => {
                         >
                           {IconComponent ? (
                             <IconComponent 
-                              className={`${isActive ? step.color : isCompleted ? 'text-emerald-400' : 'text-slate-500'} ${isActive ? 'animate-quantum-flicker' : ''}`} 
+                              className={`${isActive ? step.color : isCompleted ? 'text-emerald-400' : 'text-slate-500'}`} 
                               size={14} 
                             />
                           ) : (
-                            <div className={`w-2 h-2 rounded-full ${isActive ? step.color.replace('text-', 'bg-') : isCompleted ? 'bg-emerald-400' : 'bg-slate-500'} ${isActive ? 'animate-gentle-pulse' : ''}`}></div>
+                            <div className={`w-2 h-2 rounded-full ${isActive ? step.color.replace('text-', 'bg-') : isCompleted ? 'bg-emerald-400' : 'bg-slate-500'}`}></div>
                           )}
                           <span className={`text-sm font-medium ${isActive ? step.color : isCompleted ? 'text-emerald-400' : 'text-slate-500'}`}>
                             {step.text}
                           </span>
                           {isActive && (
                             <div className="flex gap-1 ml-auto">
-                              <div className="w-1 h-1 bg-current rounded-full animate-gentle-pulse [animation-delay:0ms]"></div>
-                              <div className="w-1 h-1 bg-current rounded-full animate-gentle-pulse [animation-delay:200ms]"></div>
-                              <div className="w-1 h-1 bg-current rounded-full animate-gentle-pulse [animation-delay:400ms]"></div>
+                              <div className="w-1 h-1 bg-current rounded-full"></div>
+                              <div className="w-1 h-1 bg-current rounded-full"></div>
+                              <div className="w-1 h-1 bg-current rounded-full"></div>
                             </div>
                           )}
                           {isCompleted && (
-                            <div className="w-4 h-4 bg-emerald-500/20 rounded-full flex items-center justify-center ml-auto animate-gentle-pulse">
+                            <div className="w-4 h-4 bg-emerald-500/20 rounded-full flex items-center justify-center ml-auto">
                               <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                             </div>
                           )}
@@ -253,9 +253,9 @@ export const Hero = () => {
             </div>
             
             {/* Floating quantum elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/50 animate-float [animation-delay:0.5s] hover:scale-110 transition-transform duration-300"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500/20 backdrop-blur-sm rounded-full border border-purple-400/50 animate-float [animation-delay:1.5s] hover:scale-110 transition-transform duration-300"></div>
-            <div className="absolute top-1/2 -left-6 w-4 h-4 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-400/40 animate-float [animation-delay:2.5s]"></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/50 hover:scale-110 transition-transform duration-300"></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500/20 backdrop-blur-sm rounded-full border border-purple-400/50 hover:scale-110 transition-transform duration-300"></div>
+            <div className="absolute top-1/2 -left-6 w-4 h-4 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-400/40"></div>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -139,38 +138,6 @@ export default {
 						opacity: '1'
 					}
 				},
-				'float': {
-					'0%, 100%': {
-						transform: 'translateY(0px)'
-					},
-					'50%': {
-						transform: 'translateY(-8px)'
-					}
-				},
-				'gentle-pulse': {
-					'0%, 100%': {
-						opacity: '1',
-						transform: 'scale(1)'
-					},
-					'50%': {
-						opacity: '0.9',
-						transform: 'scale(1.01)'
-					}
-				},
-				'energy-wave': {
-					'0%': {
-						transform: 'scale(1)',
-						opacity: '0.6'
-					},
-					'50%': {
-						transform: 'scale(1.05)',
-						opacity: '0.3'
-					},
-					'100%': {
-						transform: 'scale(1.1)',
-						opacity: '0'
-					}
-				},
 				'shimmer': {
 					'0%': {
 						backgroundPosition: '-200% 0'
@@ -192,17 +159,40 @@ export default {
 						opacity: '0'
 					}
 				},
-				'quantum-flicker': {
-					'0%, 100%': {
-						opacity: '1',
-						filter: 'blur(0px)'
+				'satellite-orbit-0': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(200px) rotate(0deg)',
 					},
-					'50%': {
-						opacity: '0.95',
-						filter: 'blur(0.2px)'
+					'100%': {
+						transform: 'rotate(360deg) translateX(200px) rotate(-360deg)',
 					}
 				},
-				// New Cinematic Black Hole Animations
+				'satellite-orbit-1': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(250px) rotate(0deg)',
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateX(250px) rotate(-360deg)',
+					}
+				},
+				'satellite-orbit-2': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(300px) rotate(0deg)',
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateX(300px) rotate(-360deg)',
+					}
+				},
+				'galaxy-glow': {
+					'0%, 100%': {
+						opacity: '0.2',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.4',
+						transform: 'scale(1.1)'
+					}
+				},
 				'event-horizon-glow': {
 					'0%, 100%': {
 						opacity: '0.8',
@@ -390,13 +380,12 @@ export default {
 				'slide-up': 'slide-up 0.7s ease-out',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'float': 'float 4s ease-in-out infinite',
-				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
-				'energy-wave': 'energy-wave 3s ease-out infinite',
 				'shimmer': 'shimmer 3s linear infinite',
 				'holographic-scan': 'holographic-scan 4s ease-in-out infinite',
-				'quantum-flicker': 'quantum-flicker 3s ease-in-out infinite',
-				// New Cinematic Black Hole Animations
+				'satellite-orbit-0': 'satellite-orbit-0 15s linear infinite',
+				'satellite-orbit-1': 'satellite-orbit-1 20s linear infinite',
+				'satellite-orbit-2': 'satellite-orbit-2 25s linear infinite',
+				'galaxy-glow': 'galaxy-glow 8s ease-in-out infinite',
 				'event-horizon-glow': 'event-horizon-glow 8s ease-in-out infinite',
 				'photon-sphere': 'photon-sphere 12s ease-in-out infinite',
 				'accretion-primary': 'accretion-primary 10s linear infinite',
