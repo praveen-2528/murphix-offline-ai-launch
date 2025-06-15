@@ -1,3 +1,4 @@
+
 import { ArrowRight, Play, Mic, MousePointer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingAnimation } from "./TypingAnimation";
@@ -46,8 +47,6 @@ export const Hero = () => {
         <div className="text-center">
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 mb-6 animate-slide-up">
-              <span className="text-green-400 text-sm font-medium">✨ Completely FREE</span>
-              <span className="w-1 h-1 bg-white/40 rounded-full"></span>
               <span className="text-blue-300 text-sm">Your data stays private</span>
             </div>
             

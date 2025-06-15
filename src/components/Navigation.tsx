@@ -12,7 +12,6 @@ export const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center animate-fade-in">
             <span className="text-2xl font-bold text-white hover:text-blue-300 transition-colors duration-300">Murphix</span>
-            <span className="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full animate-pulse">FREE</span>
           </div>
           
           {/* Desktop Navigation */}

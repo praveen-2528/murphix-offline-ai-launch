@@ -10,10 +10,10 @@ export const CTA = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-white/20 shadow-2xl relative overflow-hidden hover:shadow-3xl hover:border-white/30 transition-all duration-500 animate-scale-in">
           <div className="relative z-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
-              Ready for Free AI Power?
+              Ready for AI Power?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up [animation-delay:0.2s]">
-              Join the revolution of offline AI assistance. Get early access to Murphix - the free AI that talks back and keeps your data completely private on your device.
+              Join the revolution of offline AI assistance. Get early access to Murphix - the AI that talks back and keeps your data completely private on your device.
             </p>
             
             <div className="mb-8 animate-fade-in [animation-delay:0.4s]">
@@ -36,8 +36,8 @@ export const CTA = () => {
             </div>
 
             <div className="mt-8 flex items-center justify-center space-x-8 text-slate-300 text-sm animate-slide-up [animation-delay:0.8s]">
-              <span className="hover:text-white transition-colors duration-300">✓ 100% Free</span>
-              <span className="hover:text-white transition-colors duration-300">✓ Complete Privacy</span>
+              <span className="hover:text-white transition-colors duration-300">✓ 100% Private</span>
+              <span className="hover:text-white transition-colors duration-300">✓ Completely Offline</span>
               <span className="hover:text-white transition-colors duration-300">✓ Instant Voice Response</span>
             </div>
           </div>

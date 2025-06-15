@@ -9,7 +9,6 @@ export const Footer = () => {
           <div className="md:col-span-2 animate-fade-in">
             <div className="flex items-center mb-4">
               <span className="text-2xl font-bold text-white hover:text-blue-300 transition-colors duration-300">Murphix</span>
-              <span className="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full animate-pulse">FREE</span>
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed hover:text-slate-300 transition-colors duration-300">
               The world's first truly free offline AI assistant with voice interaction and virtual mouse capabilities. 

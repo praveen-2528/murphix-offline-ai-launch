@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -45,8 +44,8 @@ const Index = () => {
       <Benefits />
       <Timeline />
       <SystemRequirements />
-      <FAQ />
       <CTA />
+      <FAQ />
       <Footer />
     </div>
   );
