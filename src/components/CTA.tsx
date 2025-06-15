@@ -1,6 +1,7 @@
 
-import { ArrowRight, Download, Bell } from "lucide-react";
+import { ArrowRight, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { EmailSignup } from "./EmailSignup";
 
 export const CTA = () => {
   return (
@@ -12,25 +13,29 @@ export const CTA = () => {
               Ready for Free AI Power?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up [animation-delay:0.2s]">
-              Join the revolution of offline AI assistance. Get early access to Murphix - the free AI that talks back and keeps your data private.
+              Join the revolution of offline AI assistance. Get early access to Murphix - the free AI that talks back and keeps your data completely private on your device.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in [animation-delay:0.4s]">
+            <div className="mb-8 animate-fade-in [animation-delay:0.4s]">
+              <EmailSignup />
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in [animation-delay:0.6s]">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 text-lg shadow-lg hover:scale-105 transition-all duration-300">
                 <Bell className="mr-2 animate-pulse" size={20} />
-                Get Early Access
+                Join Beta List
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 px-8 py-4 text-lg hover:scale-105 transition-all duration-300"
               >
-                Coming Soon
+                Coming Q3 2025
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </div>
 
-            <div className="mt-8 flex items-center justify-center space-x-8 text-slate-300 text-sm animate-slide-up [animation-delay:0.6s]">
+            <div className="mt-8 flex items-center justify-center space-x-8 text-slate-300 text-sm animate-slide-up [animation-delay:0.8s]">
               <span className="hover:text-white transition-colors duration-300">✓ 100% Free</span>
               <span className="hover:text-white transition-colors duration-300">✓ Complete Privacy</span>
               <span className="hover:text-white transition-colors duration-300">✓ Instant Voice Response</span>
