@@ -1,25 +1,97 @@
+
 import { useState } from "react";
-import { Mail, Check } from "lucide-react";
+import { Mail, Check, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
 
+interface FormData {
+  email: string;
+  name: string;
+  company: string;
+}
+
+interface FormErrors {
+  email?: string;
+  name?: string;
+}
+
 export const EmailSignup = () => {
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    name: "",
+    company: ""
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleInputChange = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: e.target.value
+    }));
+    
+    // Clear error when user starts typing
+    if (errors[field as keyof FormErrors]) {
+      setErrors(prev => ({
+        ...prev,
+        [field]: undefined
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // Here you would typically send to your backend
-      console.log("Email submitted:", email);
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Here you would typically send to your backend/Supabase
+      console.log("Form submitted:", formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       setIsSubmitted(true);
       
       // Redirect to download page after 2 seconds
       setTimeout(() => {
         navigate('/download');
       }, 2000);
+    } catch (error) {
+      console.error("Submission error:", error);
+      // Handle error (you could show a toast notification here)
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -32,19 +104,76 @@ export const EmailSignup = () => {
             <h3 className="text-lg font-semibold text-white">Get Early Access</h3>
             <p className="text-slate-300 text-sm">Be the first to know when Murphix launches</p>
           </div>
-          <div className="flex gap-2">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-blue-400"
-              required
-            />
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700 px-6">
-              Notify Me
-            </Button>
+          
+          <div className="space-y-3">
+            <div>
+              <Label htmlFor="name" className="text-white text-sm font-medium">
+                Full Name *
+              </Label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleInputChange('name')}
+                className={`bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-blue-400 ${
+                  errors.name ? 'border-red-400 focus:border-red-400' : ''
+                }`}
+                required
+              />
+              {errors.name && (
+                <div className="flex items-center mt-1 text-red-400 text-xs">
+                  <AlertCircle size={12} className="mr-1" />
+                  {errors.name}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor="email" className="text-white text-sm font-medium">
+                Email Address *
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleInputChange('email')}
+                className={`bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-blue-400 ${
+                  errors.email ? 'border-red-400 focus:border-red-400' : ''
+                }`}
+                required
+              />
+              {errors.email && (
+                <div className="flex items-center mt-1 text-red-400 text-xs">
+                  <AlertCircle size={12} className="mr-1" />
+                  {errors.email}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor="company" className="text-white text-sm font-medium">
+                Company (Optional)
+              </Label>
+              <Input
+                id="company"
+                type="text"
+                placeholder="Your company name"
+                value={formData.company}
+                onChange={handleInputChange('company')}
+                className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-blue-400"
+              />
+            </div>
           </div>
+
+          <Button 
+            type="submit" 
+            className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Notify Me"}
+          </Button>
         </form>
       ) : (
         <div className="text-center py-4">
