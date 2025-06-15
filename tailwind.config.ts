@@ -159,216 +159,126 @@ export default {
 						opacity: '0'
 					}
 				},
-				'satellite-orbit-0': {
-					'0%': {
-						transform: 'rotate(0deg) translateX(200px) rotate(0deg)',
-					},
-					'100%': {
-						transform: 'rotate(360deg) translateX(200px) rotate(-360deg)',
-					}
-				},
-				'satellite-orbit-1': {
-					'0%': {
-						transform: 'rotate(0deg) translateX(250px) rotate(0deg)',
-					},
-					'100%': {
-						transform: 'rotate(360deg) translateX(250px) rotate(-360deg)',
-					}
-				},
-				'satellite-orbit-2': {
-					'0%': {
-						transform: 'rotate(0deg) translateX(300px) rotate(0deg)',
-					},
-					'100%': {
-						transform: 'rotate(360deg) translateX(300px) rotate(-360deg)',
-					}
-				},
-				'galaxy-glow': {
+				'nebula-drift-1': {
 					'0%, 100%': {
-						opacity: '0.2',
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.6'
+					},
+					'33%': {
+						transform: 'translate(20px, -30px) scale(1.1)',
+						opacity: '0.8'
+					},
+					'66%': {
+						transform: 'translate(-15px, 25px) scale(0.9)',
+						opacity: '0.7'
+					}
+				},
+				'nebula-drift-2': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.5'
+					},
+					'50%': {
+						transform: 'translate(-25px, 20px) scale(1.2)',
+						opacity: '0.9'
+					}
+				},
+				'nebula-drift-3': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.7'
+					},
+					'25%': {
+						transform: 'translate(30px, 10px) scale(0.8)',
+						opacity: '0.5'
+					},
+					'75%': {
+						transform: 'translate(-20px, -15px) scale(1.1)',
+						opacity: '0.8'
+					}
+				},
+				'nebula-drift-4': {
+					'0%, 100%': {
+						transform: 'translate(0, 0) scale(1)',
+						opacity: '0.4'
+					},
+					'40%': {
+						transform: 'translate(-35px, 30px) scale(1.3)',
+						opacity: '0.7'
+					},
+					'80%': {
+						transform: 'translate(25px, -20px) scale(0.9)',
+						opacity: '0.6'
+					}
+				},
+				'star-twinkle': {
+					'0%, 100%': {
+						opacity: '0.3',
 						transform: 'scale(1)'
 					},
 					'50%': {
-						opacity: '0.4',
-						transform: 'scale(1.1)'
+						opacity: '1',
+						transform: 'scale(1.2)'
 					}
 				},
-				'event-horizon-glow': {
+				'star-pulse': {
 					'0%, 100%': {
-						opacity: '0.8',
-						transform: 'scale(1)'
-					},
-					'50%': {
-						opacity: '0.9',
-						transform: 'scale(1.02)'
-					}
-				},
-				'photon-sphere': {
-					'0%': {
-						transform: 'scale(1) rotate(0deg)',
-						opacity: '0.6'
-					},
-					'50%': {
-						transform: 'scale(1.05) rotate(180deg)',
-						opacity: '0.8'
-					},
-					'100%': {
-						transform: 'scale(1) rotate(360deg)',
-						opacity: '0.6'
-					}
-				},
-				'accretion-primary': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						opacity: '0.8'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(360deg)',
-						opacity: '0.8'
-					}
-				},
-				'accretion-secondary': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						opacity: '0.6'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(-360deg)',
-						opacity: '0.6'
-					}
-				},
-				'accretion-outer': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						opacity: '0.4'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(360deg)',
-						opacity: '0.4'
-					}
-				},
-				'lensing-ring': {
-					'0%, 100%': {
-						transform: 'rotateX(80deg) scale(1)',
 						opacity: '0.2'
 					},
 					'50%': {
-						transform: 'rotateX(80deg) scale(1.02)',
-						opacity: '0.4'
+						opacity: '0.8'
 					}
 				},
-				'stellar-jet-top': {
-					'0%, 100%': {
-						opacity: '0.3',
-						transform: 'translateY(-200px) scaleY(1)'
-					},
-					'50%': {
-						opacity: '0.6',
-						transform: 'translateY(-200px) scaleY(1.1)'
-					}
-				},
-				'stellar-jet-bottom': {
-					'0%, 100%': {
-						opacity: '0.3',
-						transform: 'translateY(200px) scaleY(1)'
-					},
-					'50%': {
-						opacity: '0.6',
-						transform: 'translateY(200px) scaleY(1.1)'
-					}
-				},
-				'stellar-orbit-0': {
+				'shooting-star': {
 					'0%': {
-						transform: 'rotate(0deg) translateX(400px) rotate(0deg)',
-						opacity: '0'
+						opacity: '0',
+						transform: 'translateX(-100px) translateY(100px)'
 					},
-					'10%, 90%': {
+					'10%': {
+						opacity: '1'
+					},
+					'90%': {
 						opacity: '1'
 					},
 					'100%': {
-						transform: 'rotate(360deg) translateX(400px) rotate(-360deg)',
-						opacity: '0'
+						opacity: '0',
+						transform: 'translateX(100px) translateY(-100px)'
 					}
 				},
-				'stellar-orbit-1': {
+				'galaxy-rotation': {
 					'0%': {
-						transform: 'rotate(0deg) translateX(500px) rotate(0deg)',
-						opacity: '0'
-					},
-					'10%, 90%': {
-						opacity: '1'
+						transform: 'rotate(0deg)'
 					},
 					'100%': {
-						transform: 'rotate(360deg) translateX(500px) rotate(-360deg)',
-						opacity: '0'
+						transform: 'rotate(360deg)'
 					}
 				},
-				'stellar-orbit-2': {
-					'0%': {
-						transform: 'rotate(0deg) translateX(600px) rotate(0deg)',
-						opacity: '0'
-					},
-					'10%, 90%': {
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'rotate(360deg) translateX(600px) rotate(-360deg)',
-						opacity: '0'
-					}
-				},
-				'doppler-shift': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						filter: 'hue-rotate(0deg)'
-					},
-					'50%': {
-						transform: 'rotateX(75deg) rotateZ(180deg)',
-						filter: 'hue-rotate(180deg)'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(360deg)',
-						filter: 'hue-rotate(360deg)'
-					}
-				},
-				'spacetime-grid': {
+				'cosmic-float': {
 					'0%, 100%': {
-						opacity: '0.05',
-						transform: 'scale(1)'
+						transform: 'translateY(0) translateX(0)',
+						opacity: '0.1'
 					},
-					'50%': {
-						opacity: '0.1',
-						transform: 'scale(1.02)'
-					}
-				},
-				'grid-warp': {
-					'0%, 100%': {
-						transform: 'skew(-2deg, 0deg) scale(1)',
+					'25%': {
+						transform: 'translateY(-20px) translateX(10px)',
 						opacity: '0.3'
 					},
 					'50%': {
-						transform: 'skew(-1deg, 0.5deg) scale(1.01)',
+						transform: 'translateY(-10px) translateX(-15px)',
 						opacity: '0.5'
+					},
+					'75%': {
+						transform: 'translateY(-30px) translateX(20px)',
+						opacity: '0.2'
 					}
 				},
-				'cosmic-drift': {
-					'0%': {
-						transform: 'translateY(100vh) translateX(0px)',
-						opacity: '0'
-					},
-					'10%, 90%': {
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'translateY(-100vh) translateX(100px)',
-						opacity: '0'
-					}
-				},
-				'cinematic-vignette': {
+				'energy-pulse': {
 					'0%, 100%': {
-						opacity: '0.8'
+						transform: 'scale(1)',
+						opacity: '0.1'
 					},
 					'50%': {
-						opacity: '0.6'
+						transform: 'scale(1.1)',
+						opacity: '0.3'
 					}
 				}
 			},
@@ -382,26 +292,16 @@ export default {
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'shimmer': 'shimmer 3s linear infinite',
 				'holographic-scan': 'holographic-scan 4s ease-in-out infinite',
-				'satellite-orbit-0': 'satellite-orbit-0 15s linear infinite',
-				'satellite-orbit-1': 'satellite-orbit-1 20s linear infinite',
-				'satellite-orbit-2': 'satellite-orbit-2 25s linear infinite',
-				'galaxy-glow': 'galaxy-glow 8s ease-in-out infinite',
-				'event-horizon-glow': 'event-horizon-glow 8s ease-in-out infinite',
-				'photon-sphere': 'photon-sphere 12s ease-in-out infinite',
-				'accretion-primary': 'accretion-primary 10s linear infinite',
-				'accretion-secondary': 'accretion-secondary 15s linear infinite reverse',
-				'accretion-outer': 'accretion-outer 20s linear infinite',
-				'lensing-ring': 'lensing-ring 25s ease-in-out infinite',
-				'stellar-jet-top': 'stellar-jet-top 6s ease-in-out infinite',
-				'stellar-jet-bottom': 'stellar-jet-bottom 6s ease-in-out infinite',
-				'stellar-orbit-0': 'stellar-orbit-0 15s linear infinite',
-				'stellar-orbit-1': 'stellar-orbit-1 20s linear infinite',
-				'stellar-orbit-2': 'stellar-orbit-2 25s linear infinite',
-				'doppler-shift': 'doppler-shift 18s linear infinite',
-				'spacetime-grid': 'spacetime-grid 15s ease-in-out infinite',
-				'grid-warp': 'grid-warp 12s ease-in-out infinite',
-				'cosmic-drift': 'cosmic-drift 80s linear infinite',
-				'cinematic-vignette': 'cinematic-vignette 20s ease-in-out infinite'
+				'nebula-drift-1': 'nebula-drift-1 25s ease-in-out infinite',
+				'nebula-drift-2': 'nebula-drift-2 30s ease-in-out infinite',
+				'nebula-drift-3': 'nebula-drift-3 35s ease-in-out infinite',
+				'nebula-drift-4': 'nebula-drift-4 28s ease-in-out infinite',
+				'star-twinkle': 'star-twinkle 3s ease-in-out infinite',
+				'star-pulse': 'star-pulse 4s ease-in-out infinite',
+				'shooting-star': 'shooting-star 2s ease-out infinite',
+				'galaxy-rotation': 'galaxy-rotation 50s linear infinite',
+				'cosmic-float': 'cosmic-float 40s ease-in-out infinite',
+				'energy-pulse': 'energy-pulse 6s ease-in-out infinite'
 			},
 			backgroundSize: {
 				'400%': '400% 400%'
