@@ -21,8 +21,8 @@ export const Benefits = () => {
   ];
 
   return (
-    <section id="benefits" className="py-20 bg-white/5 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="benefits" className="py-20 bg-white/5 backdrop-blur-sm relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -56,11 +56,11 @@ export const Benefits = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:shadow-2xl hover:border-white/30 transition-all duration-500">
               <div className="space-y-4">
                 {[
-                  "Completely free forever",
+                  "Completely free",
                   "Voice commands & responses",
                   "Zero latency AI responses",
                   "Works in any environment",
-                  "Enterprise-grade security",
+                  "Your data never leaves your device",
                   "Regular feature updates"
                 ].map((feature, index) => (
                   <div 

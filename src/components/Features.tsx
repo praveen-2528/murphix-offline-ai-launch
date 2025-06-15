@@ -6,7 +6,12 @@ export const Features = () => {
     {
       icon: DollarSign,
       title: "Completely Free",
-      description: "No subscriptions, no hidden fees, no premium tiers. Murphix is free forever for everyone."
+      description: "No hidden fees, no premium tiers. Murphix is free for everyone, always."
+    },
+    {
+      icon: Shield,
+      title: "Data Privacy First",
+      description: "Your conversations and data never leave your device. Complete privacy and security guaranteed."
     },
     {
       icon: Mic2,
@@ -27,17 +32,12 @@ export const Features = () => {
       icon: Zap,
       title: "Lightning Fast Response",
       description: "Instant response time with optimized local processing. No waiting for cloud servers."
-    },
-    {
-      icon: Shield,
-      title: "Privacy First",
-      description: "Your conversations and data never leave your device. Complete privacy and security guaranteed."
     }
   ];
 
   return (
     <section id="features" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Powerful Features
@@ -64,9 +64,9 @@ export const Features = () => {
         </div>
       </div>
       
-      {/* Background glassmorphism elements */}
-      <div className="absolute top-1/3 left-0 w-32 h-32 bg-blue-500/5 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:4s]"></div>
-      <div className="absolute bottom-1/3 right-0 w-24 h-24 bg-cyan-500/5 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:5s]"></div>
+      {/* Background glassmorphism elements with proper z-index */}
+      <div className="absolute top-1/3 left-0 w-32 h-32 bg-blue-500/3 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:4s] -z-10"></div>
+      <div className="absolute bottom-1/3 right-0 w-24 h-24 bg-cyan-500/3 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:5s] -z-10"></div>
     </section>
   );
 };

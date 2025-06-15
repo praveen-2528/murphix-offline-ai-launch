@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 export const Hero = () => {
   return (
     <section className="relative pt-20 pb-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 mb-6 animate-slide-up">
               <span className="text-green-400 text-sm font-medium">✨ Completely FREE</span>
               <span className="w-1 h-1 bg-white/40 rounded-full"></span>
-              <span className="text-blue-300 text-sm">No subscriptions ever</span>
+              <span className="text-blue-300 text-sm">Your data stays private</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
@@ -84,10 +84,10 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced background decoration with glassmorphism */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-cyan-600/10 pointer-events-none"></div>
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:2s]"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cyan-500/10 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:3s]"></div>
+      {/* Enhanced background decoration with proper z-index */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-cyan-600/10 pointer-events-none -z-10"></div>
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/5 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:2s] -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cyan-500/5 backdrop-blur-3xl rounded-full pointer-events-none animate-float [animation-delay:3s] -z-10"></div>
     </section>
   );
 };

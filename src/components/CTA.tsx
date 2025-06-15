@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button";
 export const CTA = () => {
   return (
     <section className="py-20 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-white/20 shadow-2xl relative overflow-hidden hover:shadow-3xl hover:border-white/30 transition-all duration-500 animate-scale-in">
-          <div className="relative z-10">
+          <div className="relative z-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               Ready for Free AI Power?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up [animation-delay:0.2s]">
-              Join the revolution of offline AI assistance. Get early access to Murphix - the free AI that talks back and never needs the internet.
+              Join the revolution of offline AI assistance. Get early access to Murphix - the free AI that talks back and keeps your data private.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in [animation-delay:0.4s]">
@@ -31,15 +31,15 @@ export const CTA = () => {
             </div>
 
             <div className="mt-8 flex items-center justify-center space-x-8 text-slate-300 text-sm animate-slide-up [animation-delay:0.6s]">
-              <span className="hover:text-white transition-colors duration-300">✓ 100% Free Forever</span>
-              <span className="hover:text-white transition-colors duration-300">✓ No Registration Required</span>
+              <span className="hover:text-white transition-colors duration-300">✓ 100% Free</span>
+              <span className="hover:text-white transition-colors duration-300">✓ Complete Privacy</span>
               <span className="hover:text-white transition-colors duration-300">✓ Instant Voice Response</span>
             </div>
           </div>
           
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 backdrop-blur-3xl rounded-full animate-float [animation-delay:1s]"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-500/10 backdrop-blur-3xl rounded-full animate-float [animation-delay:2s]"></div>
+          {/* Background decoration with proper z-index */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 backdrop-blur-3xl rounded-full animate-float [animation-delay:1s] -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-500/5 backdrop-blur-3xl rounded-full animate-float [animation-delay:2s] -z-10"></div>
         </div>
       </div>
     </section>
