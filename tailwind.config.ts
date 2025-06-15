@@ -144,7 +144,7 @@ export default {
 						transform: 'translateY(0px)'
 					},
 					'50%': {
-						transform: 'translateY(-10px)'
+						transform: 'translateY(-8px)'
 					}
 				},
 				'gentle-pulse': {
@@ -153,21 +153,21 @@ export default {
 						transform: 'scale(1)'
 					},
 					'50%': {
-						opacity: '0.8',
-						transform: 'scale(1.02)'
+						opacity: '0.9',
+						transform: 'scale(1.01)'
 					}
 				},
 				'energy-wave': {
 					'0%': {
 						transform: 'scale(1)',
-						opacity: '0.8'
+						opacity: '0.6'
 					},
 					'50%': {
-						transform: 'scale(1.1)',
-						opacity: '0.4'
+						transform: 'scale(1.05)',
+						opacity: '0.3'
 					},
 					'100%': {
-						transform: 'scale(1.3)',
+						transform: 'scale(1.1)',
 						opacity: '0'
 					}
 				},
@@ -177,96 +177,6 @@ export default {
 					},
 					'100%': {
 						backgroundPosition: '200% 0'
-					}
-				},
-				'black-hole-core': {
-					'0%, 100%': {
-						transform: 'scale(1) rotate(0deg)',
-						boxShadow: '0 0 50px rgba(139, 69, 19, 0.8), inset 0 0 50px rgba(0, 0, 0, 1)'
-					},
-					'50%': {
-						transform: 'scale(1.1) rotate(180deg)',
-						boxShadow: '0 0 80px rgba(139, 69, 19, 0.9), inset 0 0 80px rgba(0, 0, 0, 1)'
-					}
-				},
-				'event-horizon': {
-					'0%': {
-						transform: 'scale(1) rotate(0deg)',
-						opacity: '0.6'
-					},
-					'100%': {
-						transform: 'scale(1.2) rotate(360deg)',
-						opacity: '0.3'
-					}
-				},
-				'accretion-disk-1': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						borderColor: 'rgba(251, 146, 60, 0.4)'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(360deg)',
-						borderColor: 'rgba(251, 146, 60, 0.1)'
-					}
-				},
-				'accretion-disk-2': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						borderColor: 'rgba(96, 165, 250, 0.3)'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(-360deg)',
-						borderColor: 'rgba(96, 165, 250, 0.1)'
-					}
-				},
-				'accretion-disk-3': {
-					'0%': {
-						transform: 'rotateX(75deg) rotateZ(0deg)',
-						borderColor: 'rgba(45, 212, 191, 0.2)'
-					},
-					'100%': {
-						transform: 'rotateX(75deg) rotateZ(360deg)',
-						borderColor: 'rgba(45, 212, 191, 0.05)'
-					}
-				},
-				'stellar-orbit': {
-					'0%': {
-						transform: 'rotate(0deg) translateX(200px) rotate(0deg)',
-						opacity: '0'
-					},
-					'10%': {
-						opacity: '1'
-					},
-					'90%': {
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'rotate(360deg) translateX(200px) rotate(-360deg)',
-						opacity: '0'
-					}
-				},
-				'lensing-effect': {
-					'0%, 100%': {
-						opacity: '0.3'
-					},
-					'50%': {
-						opacity: '0.1'
-					}
-				},
-				'space-dust': {
-					'0%': {
-						transform: 'translateY(100vh) translateX(0)',
-						opacity: '0'
-					},
-					'10%': {
-						opacity: '1'
-					},
-					'90%': {
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'translateY(-100vh) translateX(50px)',
-						opacity: '0'
 					}
 				},
 				'holographic-scan': {
@@ -288,8 +198,187 @@ export default {
 						filter: 'blur(0px)'
 					},
 					'50%': {
-						opacity: '0.7',
-						filter: 'blur(0.5px)'
+						opacity: '0.95',
+						filter: 'blur(0.2px)'
+					}
+				},
+				// New Cinematic Black Hole Animations
+				'event-horizon-glow': {
+					'0%, 100%': {
+						opacity: '0.8',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.9',
+						transform: 'scale(1.02)'
+					}
+				},
+				'photon-sphere': {
+					'0%': {
+						transform: 'scale(1) rotate(0deg)',
+						opacity: '0.6'
+					},
+					'50%': {
+						transform: 'scale(1.05) rotate(180deg)',
+						opacity: '0.8'
+					},
+					'100%': {
+						transform: 'scale(1) rotate(360deg)',
+						opacity: '0.6'
+					}
+				},
+				'accretion-primary': {
+					'0%': {
+						transform: 'rotateX(75deg) rotateZ(0deg)',
+						opacity: '0.8'
+					},
+					'100%': {
+						transform: 'rotateX(75deg) rotateZ(360deg)',
+						opacity: '0.8'
+					}
+				},
+				'accretion-secondary': {
+					'0%': {
+						transform: 'rotateX(75deg) rotateZ(0deg)',
+						opacity: '0.6'
+					},
+					'100%': {
+						transform: 'rotateX(75deg) rotateZ(-360deg)',
+						opacity: '0.6'
+					}
+				},
+				'accretion-outer': {
+					'0%': {
+						transform: 'rotateX(75deg) rotateZ(0deg)',
+						opacity: '0.4'
+					},
+					'100%': {
+						transform: 'rotateX(75deg) rotateZ(360deg)',
+						opacity: '0.4'
+					}
+				},
+				'lensing-ring': {
+					'0%, 100%': {
+						transform: 'rotateX(80deg) scale(1)',
+						opacity: '0.2'
+					},
+					'50%': {
+						transform: 'rotateX(80deg) scale(1.02)',
+						opacity: '0.4'
+					}
+				},
+				'stellar-jet-top': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'translateY(-200px) scaleY(1)'
+					},
+					'50%': {
+						opacity: '0.6',
+						transform: 'translateY(-200px) scaleY(1.1)'
+					}
+				},
+				'stellar-jet-bottom': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'translateY(200px) scaleY(1)'
+					},
+					'50%': {
+						opacity: '0.6',
+						transform: 'translateY(200px) scaleY(1.1)'
+					}
+				},
+				'stellar-orbit-0': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(400px) rotate(0deg)',
+						opacity: '0'
+					},
+					'10%, 90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateX(400px) rotate(-360deg)',
+						opacity: '0'
+					}
+				},
+				'stellar-orbit-1': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(500px) rotate(0deg)',
+						opacity: '0'
+					},
+					'10%, 90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateX(500px) rotate(-360deg)',
+						opacity: '0'
+					}
+				},
+				'stellar-orbit-2': {
+					'0%': {
+						transform: 'rotate(0deg) translateX(600px) rotate(0deg)',
+						opacity: '0'
+					},
+					'10%, 90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateX(600px) rotate(-360deg)',
+						opacity: '0'
+					}
+				},
+				'doppler-shift': {
+					'0%': {
+						transform: 'rotateX(75deg) rotateZ(0deg)',
+						filter: 'hue-rotate(0deg)'
+					},
+					'50%': {
+						transform: 'rotateX(75deg) rotateZ(180deg)',
+						filter: 'hue-rotate(180deg)'
+					},
+					'100%': {
+						transform: 'rotateX(75deg) rotateZ(360deg)',
+						filter: 'hue-rotate(360deg)'
+					}
+				},
+				'spacetime-grid': {
+					'0%, 100%': {
+						opacity: '0.05',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.1',
+						transform: 'scale(1.02)'
+					}
+				},
+				'grid-warp': {
+					'0%, 100%': {
+						transform: 'skew(-2deg, 0deg) scale(1)',
+						opacity: '0.3'
+					},
+					'50%': {
+						transform: 'skew(-1deg, 0.5deg) scale(1.01)',
+						opacity: '0.5'
+					}
+				},
+				'cosmic-drift': {
+					'0%': {
+						transform: 'translateY(100vh) translateX(0px)',
+						opacity: '0'
+					},
+					'10%, 90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(-100vh) translateX(100px)',
+						opacity: '0'
+					}
+				},
+				'cinematic-vignette': {
+					'0%, 100%': {
+						opacity: '0.8'
+					},
+					'50%': {
+						opacity: '0.6'
 					}
 				}
 			},
@@ -301,20 +390,29 @@ export default {
 				'slide-up': 'slide-up 0.7s ease-out',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite',
+				'float': 'float 4s ease-in-out infinite',
 				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
-				'energy-wave': 'energy-wave 2s ease-out infinite',
-				'shimmer': 'shimmer 2s linear infinite',
-				'black-hole-core': 'black-hole-core 20s ease-in-out infinite',
-				'event-horizon': 'event-horizon 15s linear infinite',
-				'accretion-disk-1': 'accretion-disk-1 8s linear infinite',
-				'accretion-disk-2': 'accretion-disk-2 12s linear infinite reverse',
-				'accretion-disk-3': 'accretion-disk-3 16s linear infinite',
-				'stellar-orbit': 'stellar-orbit 40s linear infinite',
-				'lensing-effect': 'lensing-effect 10s ease-in-out infinite',
-				'space-dust': 'space-dust 60s linear infinite',
-				'holographic-scan': 'holographic-scan 3s ease-in-out infinite',
-				'quantum-flicker': 'quantum-flicker 2s ease-in-out infinite'
+				'energy-wave': 'energy-wave 3s ease-out infinite',
+				'shimmer': 'shimmer 3s linear infinite',
+				'holographic-scan': 'holographic-scan 4s ease-in-out infinite',
+				'quantum-flicker': 'quantum-flicker 3s ease-in-out infinite',
+				// New Cinematic Black Hole Animations
+				'event-horizon-glow': 'event-horizon-glow 8s ease-in-out infinite',
+				'photon-sphere': 'photon-sphere 12s ease-in-out infinite',
+				'accretion-primary': 'accretion-primary 10s linear infinite',
+				'accretion-secondary': 'accretion-secondary 15s linear infinite reverse',
+				'accretion-outer': 'accretion-outer 20s linear infinite',
+				'lensing-ring': 'lensing-ring 25s ease-in-out infinite',
+				'stellar-jet-top': 'stellar-jet-top 6s ease-in-out infinite',
+				'stellar-jet-bottom': 'stellar-jet-bottom 6s ease-in-out infinite',
+				'stellar-orbit-0': 'stellar-orbit-0 15s linear infinite',
+				'stellar-orbit-1': 'stellar-orbit-1 20s linear infinite',
+				'stellar-orbit-2': 'stellar-orbit-2 25s linear infinite',
+				'doppler-shift': 'doppler-shift 18s linear infinite',
+				'spacetime-grid': 'spacetime-grid 15s ease-in-out infinite',
+				'grid-warp': 'grid-warp 12s ease-in-out infinite',
+				'cosmic-drift': 'cosmic-drift 80s linear infinite',
+				'cinematic-vignette': 'cinematic-vignette 20s ease-in-out infinite'
 			},
 			backgroundSize: {
 				'400%': '400% 400%'
