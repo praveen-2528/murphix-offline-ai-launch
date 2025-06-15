@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -37,15 +38,15 @@ const Index = () => {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-violet-900/30 to-slate-900 transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
       <Navigation />
       <Hero />
       <Features />
       <Benefits />
       <Timeline />
       <SystemRequirements />
-      <CTA />
       <FAQ />
+      <CTA />
       <Footer />
     </div>
   );

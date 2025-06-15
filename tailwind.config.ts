@@ -144,10 +144,34 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)'
+						boxShadow: '0 0 5px rgba(139, 92, 246, 0.3), 0 0 10px rgba(139, 92, 246, 0.2)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4)'
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4), 0 0 40px rgba(168, 85, 247, 0.3)'
+					}
+				},
+				'gradient-shift': {
+					'0%, 100%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					}
+				},
+				'wiggle': {
+					'0%, 100%': {
+						transform: 'rotate(-3deg)'
+					},
+					'50%': {
+						transform: 'rotate(3deg)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
 					}
 				}
 			},
@@ -160,7 +184,13 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 3s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite'
+			},
+			backgroundSize: {
+				'400%': '400% 400%'
 			}
 		}
 	},
